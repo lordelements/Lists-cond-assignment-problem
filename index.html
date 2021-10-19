@@ -21,8 +21,8 @@
       <!-- 1) Add code to manage a list of tasks in a Vue app -->
       <!-- When clicking "Add Task" a new task with the entered text should be added -->
       <input type="text" v-model="enteredTasks">
-      <button @click="addTask">Add Task</button>
-      <ul >
+      <button v-if="tasks.length <= 9" @click="addTask">Add Task</button>
+      <ul>
          <li v-if="isShow" v-for="(task, index) in tasks" @click="removeTasks(index)">
            {{ task }} </li>
 
